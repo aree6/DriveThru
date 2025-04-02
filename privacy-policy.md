@@ -1,30 +1,77 @@
 # DriveThru Extension Privacy Policy
 
 ## Single Purpose Description
-DriveThru is a Chrome extension that enhances the Google Drive viewing experience by providing local file viewing capabilities and improved download management. It allows users to preview and download files directly from Google Drive with additional controls and features for a better user experience.
+DriveThru adds a "Re-download" button to Google Drive files when viewing them, allowing users to easily re-download files if they encounter any issues with the initial download. This enhances the Google Drive download experience by providing a simple, one-click solution for file download issues.
 
 ## Permission Justifications
 
-### Storage Justification
-Storage permission is required to save user preferences and maintain extension settings between browser sessions. This ensures a consistent user experience and remembers user-selected options for file handling.
+### Storage Permission
+**Feature**: The extension needs to remember if a file has been previously downloaded and track download states.
+**Why needed**: Without storage permission, the extension couldn't:
+- Remember which files have been downloaded
+- Save user preferences for download behavior
+- Track download progress and status
 
-### Downloads Justification
-Downloads permission is necessary for the core functionality of the extension - managing and initiating file downloads from Google Drive. This allows the extension to handle file downloads and provide re-download capabilities when needed.
+### Downloads Permission
+**Feature**: The "Re-download" button that appears on Google Drive file pages.
+**Why needed**: Without downloads permission, the extension couldn't:
+- Initiate file downloads when users click the re-download button
+- Handle file downloads from Google Drive
+- Manage download states and retries
 
-### Tabs Justification
-Tabs permission is required to detect when users are viewing Google Drive files and to inject the necessary interface elements (like the re-download button) into the appropriate tabs.
+### Tabs Permission
+**Feature**: The automatic injection of the re-download button on Google Drive file pages.
+**Why needed**: Without tabs permission, the extension couldn't:
+- Detect when you're viewing a Google Drive file
+- Add the re-download button to the correct page
+- Update the button state based on file status
 
-### Notifications Justification
-Notifications permission is used to inform users about the status of their downloads and file operations, providing important feedback about successful downloads or any potential errors.
+### Notifications Permission
+**Feature**: Download status notifications that tell you when:
+- A download has started
+- A download has completed
+- There was an error during download
+**Why needed**: Without notifications permission, users wouldn't know if their download was successful or failed
 
-### Scripting Justification
-Scripting permission is necessary to inject our custom interface elements into Google Drive pages and handle user interactions with these elements, such as the re-download button functionality.
+### Scripting Permission
+**Feature**: The re-download button that appears on Google Drive pages.
+**Why needed**: Without scripting permission, the extension couldn't:
+- Add the re-download button to Google Drive pages
+- Make the button interactive
+- Handle click events on the button
 
-### Host Permission Justification
-Host permissions for Google Drive domains are required to integrate with Google Drive's interface and provide our enhanced viewing and download capabilities. This permission is strictly limited to Google Drive domains and is essential for the core functionality of the extension.
+### Host Permission
+**Feature**: Integration with Google Drive's file viewer and download system.
+**Why needed**: Without host permission for Google Drive domains, the extension couldn't:
+- Access Google Drive pages to add the re-download button
+- Interact with Google Drive's file viewer
+- Handle file downloads from Google Drive URLs
 
-## Remote Code Usage
-No, I am not using remote code. All JavaScript code is packaged within the extension, and no external scripts are loaded or executed.
+### Identity Permission
+**Feature**: The extension needs to work with Google Drive's file system which requires:
+- Accessing Google Drive files in the browser
+- Handling file downloads from Google Drive URLs
+- Working with Google Drive's file viewer
+
+**Why needed**: Without identity permission, the extension couldn't:
+- Access Google Drive pages properly
+- Work with Google Drive's file system
+- Handle file downloads from authenticated Google Drive sessions
+
+Note: The extension does NOT:
+- Store any user identity information
+- Access any personal Google account data
+- Require users to log in separately
+- Send any identity information to external servers
+
+It only uses the identity permission to work within the existing Google Drive session that users are already logged into in their browser.
+
+## Remote Code
+**No remote code is used**
+All code is packaged within the extension. The extension only:
+- Uses local JavaScript files
+- Doesn't load any external scripts
+- Doesn't use eval() or external resources
 
 ## Data Usage
 
